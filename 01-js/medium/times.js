@@ -9,5 +9,20 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
+    if (n <= 0) {
+        throw new Error("Invalid input: n must be a positive integer.");
+      }
+    
+      const startTime = Date.now(); // Use Date.now() instead of performance.now()
+    
+      // Use a more efficient sum calculation:
+      const sum = (n * (n + 1)) / 2;
+    
+      const endTime = Date.now();
+    
+      return (endTime - startTime) / 1000;
 }
+for (const n of [100, 100000, 1000000000]) {
+    const timeInSeconds = calculateTime(n);
+    console.log(`Time to calculate sum from 1 to ${n}: ${timeInSeconds.toFixed(5)} seconds`);
+  }

@@ -1,0 +1,8 @@
+
+function greet(firstName : String){
+
+    console.log("Hello ", firstName)
+}
+
+
+greet("Vishal");
